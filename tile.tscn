@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw58rbgo4pmeh"]
+
+[ext_resource type="Script" path="res://tile.gd" id="1_avrcd"]
+[ext_resource type="Texture2D" uid="uid://ib5v3o374hre" path="res://icon.svg" id="2_ig7gm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vxxg"]
+
+[node name="Tile" type="Area2D"]
+script = ExtResource("1_avrcd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3vxxg")
+
+[node name="head_sprite" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("2_ig7gm")
+
+[node name="tail-sprite" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.96606, 0.432712, 0.473087, 1)
+position = Vector2(-1.66893e-06, -1.66893e-06)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("2_ig7gm")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
